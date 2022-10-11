@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 
-	"desafio-go-web/internal/domain"
 	"github.com/gin-gonic/gin"
+	"github.com/juanimeli/desafio-goweb-juanguglielmone/desafio-go-web-master/internal/domain"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) { c.String(200, "pong") })
 	// Rutas a desarollar:
-	
+
 	// GET - “/ticket/getByCountry/:dest”
 	// GET - “/ticket/getAverage/:dest”
 	if err := r.Run(); err != nil {

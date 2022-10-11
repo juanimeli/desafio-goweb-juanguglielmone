@@ -3,8 +3,8 @@ package handler
 import (
 	"net/http"
 
-	"desafio-go-web/internal/tickets"
 	"github.com/gin-gonic/gin"
+	"github.com/juanimeli/desafio-goweb-juanguglielmone/desafio-go-web/internal/tickets"
 )
 
 type Service struct {
