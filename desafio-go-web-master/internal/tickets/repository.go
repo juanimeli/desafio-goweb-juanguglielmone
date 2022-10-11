@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/juanimeli/desafio-goweb-juanguglielmone/desafio-go-web-master/internal/domain"
 )
 
 type Repository interface {
