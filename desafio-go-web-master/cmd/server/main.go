@@ -26,6 +26,7 @@ func main() {
 
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) { c.String(200, "pong") })
+	r.GET("/byDestination/:dest", t.GetTicketsByDestination())
 	r.GET("/totalByDestination/:dest", t.GetTicketsByCountry())
 	r.GET("/pctgeByDestination/:dest", t.AverageDestination())
 	// Rutas a desarollar:

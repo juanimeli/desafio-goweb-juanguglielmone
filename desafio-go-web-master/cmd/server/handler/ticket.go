@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -43,6 +44,21 @@ func (s *Service) AverageDestination() gin.HandlerFunc {
 			return
 		}
 
-		c.JSON(200, avg)
+		c.JSON(200, fmt.Sprintf("%.2f %%", avg))
+	}
+}
+
+func (s *Service) GetTicketsByDestination() gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+		destination := c.Param("dest")
+
+		t, err := s.service.GetTicketsByDestination(c, destination)
+		if err != nil {
+			c.String(http.StatusInternalServerError, err.Error(), nil)
+			return
+		}
+
+		c.JSON(200, t)
 	}
 }
