@@ -62,3 +62,16 @@ func (s *Service) GetTicketsByDestination() gin.HandlerFunc {
 		c.JSON(200, t)
 	}
 }
+
+func (s *Service) GetAllTickets() gin.HandlerFunc {
+	return func(c *gin.Context) {
+
+		t, err := s.service.GetAll(c)
+		if err != nil {
+			c.String(http.StatusInternalServerError, err.Error(), nil)
+			return
+		}
+
+		c.JSON(200, t)
+	}
+}

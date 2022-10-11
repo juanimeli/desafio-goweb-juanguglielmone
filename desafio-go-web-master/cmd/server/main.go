@@ -29,6 +29,7 @@ func main() {
 	r.GET("/byDestination/:dest", t.GetTicketsByDestination())
 	r.GET("/totalByDestination/:dest", t.GetTicketsByCountry())
 	r.GET("/pctgeByDestination/:dest", t.AverageDestination())
+	r.GET("/allTickets", t.GetAllTickets())
 	// Rutas a desarollar:
 
 	// GET - “/ticket/getByCountry/:dest”
